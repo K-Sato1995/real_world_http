@@ -10,6 +10,8 @@ func main() {
 	resp, _ := GetRequest()
 
 	defer resp.Body.Close()
+	// ioutil.ReadAll(reader io.Reader)([]byte, error)
+	// put the content of io.Reader in []byte.
 	body, _ := ioutil.ReadAll(resp.Body)
 	// Log status
 	log.Println(resp.Status)
