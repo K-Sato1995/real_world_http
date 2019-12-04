@@ -19,6 +19,10 @@ func GetRequest() (string, error) {
 	}
 	defer resp.Body.Close()
 	body, err := ioutil.ReadAll(resp.Body)
+
+	// Log an object of http.Response
+	log.Println(resp)
+
 	if err != nil {
 		return "", err
 	}
