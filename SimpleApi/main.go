@@ -13,6 +13,8 @@ func main() {
 	body, _ := ioutil.ReadAll(resp.Body)
 	// Log status
 	log.Println(resp.Status)
+	// Log Header
+	log.Println(resp.Header)
 	// Log an object of http.Response
 	log.Println(resp)
 	// Converty byte[] to string
