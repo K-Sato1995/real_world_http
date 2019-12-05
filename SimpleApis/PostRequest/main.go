@@ -14,8 +14,7 @@ func main() {
 
 	if err != nil {
 		// Can't make the request
-		log.Println("Error")
-		panic(err)
+		log.Fatal(err)
 	}
 	log.Printf("Status: %v", resp.Status)
 

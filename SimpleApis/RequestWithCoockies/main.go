@@ -12,7 +12,7 @@ func main() {
 	jar, err := cookiejar.New(nil)
 
 	if err != nil {
-		panic(err)
+		log.Fatal(err)
 	}
 	// Create a http client that can store a coockie
 	client := http.Client{
@@ -23,12 +23,12 @@ func main() {
 	for i := 0; i < 2; i++ {
 		resp, err := client.Get("http://localhost:3000/coockie")
 		if err != nil {
-			panic(err)
+			log.Fatal(err)
 		}
 		dump, err := httputil.DumpResponse(resp, true)
 
 		if err != nil {
-			panic(err)
+			log.Fatal(err)
 		}
 		log.Println(string(dump))
 	}
